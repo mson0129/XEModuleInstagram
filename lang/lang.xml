@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lang>
+	<item name="instagram">
+		<value xml:lang="ko"><![CDATA[인스타그램]]></value>
+		<value xml:lang="en"><![CDATA[Instagram]]></value>
+	</item>
+	<item name="instagram_essentials">
+		<value xml:lang="ko"><![CDATA[필수]]></value>
+		<value xml:lang="en"><![CDATA[Essentials]]></value>
+	</item>
+	<item name="instagram_client_id">
+		<value xml:lang="ko"><![CDATA[클라이언트 아이디]]></value>
+		<value xml:lang="en"><![CDATA[Client ID]]></value>
+	</item>
+	<item name="instagram_about_client_id">
+		<value xml:lang="ko"><![CDATA[클라이언트 아이디입니다.]]></value>
+		<value xml:lang="en"><![CDATA[It's a client ID]]></value>
+	</item>
+	<item name="instagram_username">
+		<value xml:lang="ko"><![CDATA[사용자 이름]]></value>
+		<value xml:lang="en"><![CDATA[Username]]></value>
+	</item>
+	<item name="instagram_about_username">
+		<value xml:lang="ko"><![CDATA[사용자 이름입니다.]]></value>
+		<value xml:lang="en"><![CDATA[It's a username]]></value>
+	</item>
+	<item name="instagram_view">
+		<value xml:lang="ko"><![CDATA[보기]]></value>
+		<value xml:lang="en"><![CDATA[View]]></value>
+	</item>
+	<item name="instagram_performance">
+		<value xml:lang="ko"><![CDATA[성능]]></value>
+		<value xml:lang="en"><![CDATA[Performance]]></value>
+	</item>
+	<item name="instagram_advanced_setting">
+		<value xml:lang="ko"><![CDATA[자세히 고치기]]></value>
+		<value xml:lang="en"><![CDATA[Advanced Settings]]></value>
+	</item>
+</lang>

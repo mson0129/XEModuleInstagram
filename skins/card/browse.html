@@ -1,0 +1,33 @@
+<load target="css/skin.css" />
+<div class="XEModuleInstagramSkinCard">
+	<ul class="XEModuleInstagramSkinCardList">
+<!--@foreach($data as $key=>$val)-->
+		<li class="XEModuleInstagramSkinCardListItem">
+			<div class="XEModuleInstagramSkinCardListItemContainer">
+				<div class="XEModuleInstagramSkinCardListItemImage">
+					<!--@if($val[type]=="image")-->
+					<img src="{$val[images][standard_resolution][url]}" />
+					<!--@else-->
+					<video id='listItem{$key}' onclick="this.play();" controls><source src="{$val[videos][standard_resolution][url]}" type="video/mp4"></video>
+					<!--@end-->
+				</div>
+				<div class='XEModuleInstagramSkinCardListItemInfo'>
+					<div class='XEModuleInstagramSkinCardListItemInfoContainer'>
+						<p class='XEModuleInstagramSkinCardListItemInfoUser'>
+							<a class='XEModuleInstagramSkinCardUsername' href="{sprintf('//instagram.com/%s', $val[user][username])}" target="_blank"><img src="{$val[user][profile_picture]}" /> {$val[user][username]}</a>
+						</p>
+						<p class='XEModuleInstagramSkinCardListItemInfoCaption'>
+							<a class='XEModuleInstagramSkinCardUsername' href="{sprintf('//instagram.com/%s', $val[caption][from][username])}" target="_blank">{$val[caption][from][username]}</a>
+							<span>{preg_replace("/#([^\s]+[^\s\.,\(\)\[\]#@!])/", "<a href='//instagram.com/explore/tags/$1' target='_blank'>#$1</a>", preg_replace("/@([\w_\.]+[\w])/", "<a href='//instagram.com/$1' target='_blank'>@$1</a>", $val[caption][text]))}</span>
+						</p>
+						<p class='XEModuleInstagramSkinCardListItemInfoComment' loop="$val[comments][data]=>$commentKey,$comment">
+							<a class='XEModuleInstagramSkinCardUsername' href="{sprintf('//instagram.com/%s', $comment[from][username])}" target="_blank">{$comment[from][username]}</a>
+							<span>{preg_replace("/#([^\s]+[^\s\.,\(\)\[\]#@!])/", "<a href='//instagram.com/explore/tags/$1' target='_blank'>#$1</a>", preg_replace("/@([\w_\.]+[\w])/", "<a href='//instagram.com/$1' target='_blank'>@$1</a>", $comment[text]))}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</li>
+<!--@end-->
+	</ul>
+</div>

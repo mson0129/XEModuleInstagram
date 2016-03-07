@@ -1,0 +1,52 @@
+<style type='text/css'>
+	@import url('//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css');
+	h1 {font-size: 2em;}
+	h2 {margin: 5em 0 1em; font-size: 1.6em;}
+	h3 {margin: 2em 0 1em; font-size: 1.2em;}
+	ul.XEModuleInstagramSkinDeveloperToc {display: initial;}
+	ul.XEModuleInstagramSkinDeveloperToc li {margin: 1em 0 1em 4em;}
+	ul.XEModuleInstagramSkinDeveloperToc ul > li {list-style: initial;}
+</style>
+<div class='XEModuleInstagramSkinDeveloper'>
+	<h1><i class='xi-code'></i> 개발자용 스킨 &mdash; 모듈에서 제공하는 모든 변수를 확인합니다.</h1>
+	
+	<h2><i class='xi-paper'></i> 목차</h2>
+	<ul class='XEModuleInstagramSkinDeveloperToc'>
+		<li><i class='xi-db-full'></i> 모듈 정보
+		<ul>
+			<li><a href='#ModuleInfo'>$module_info</a></li>
+		</ul>
+		</li>
+		<li><i class='xi-list-ul'></i> 목록
+		<ul>
+			<li><a href='#Data'>$data</a></li>
+		</ul>
+		</li>
+		<li><i class='xi-globus'></i> 언어팩
+		<ul>
+			<li><a href='#Lang'>$lang</a></li>
+		</ul>
+		</li>
+		<li><i class='xi-ellipsis-h'></i> 기타
+		<ul>
+			<li><a href='#Mid'>$mid</a></li>
+		</ul>
+		</li>
+	</ul>
+	
+	<h2><i class='xi-db-full'></i> 모듈 정보</h2>
+	<h3 id='ModuleInfo'>$module_info</h3>
+	= {str_replace("    ", str_repeat("&nbsp;", 4), nl2br(preg_replace("/\[(profile_picture|url)\]\s\=\>\s(.*)/i", "[$1] => <a href='$2'>$2</a>", print_r($module_info, true))))}
+	
+	<h2><i class='xi-globus'></i> 목록</h2>
+	<h3 id='Data'>$data</h3>
+	= {str_replace("    ", str_repeat("&nbsp;", 4), nl2br(preg_replace("/\[(profile_picture|url)\]\s\=\>\s(.*)/i", "[$1] => <a href='$2'>$2</a>", print_r($data, true))))}
+	
+	<h2><i class='xi-globus'></i> 언어팩</h2>
+	<h3 id='Lang'>$lang</h3>
+	= {str_replace("    ", str_repeat("&nbsp;", 4), nl2br(print_r($lang, true)))}
+	
+	<h2><i class='xi-ellipsis-h'></i> 기타</h2>
+	<h3 id='Mid'>$mid &mdash; 메뉴 아이디 값입니다.</h3>
+	= {$mid}
+</div>

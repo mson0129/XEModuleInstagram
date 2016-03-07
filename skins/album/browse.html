@@ -1,0 +1,16 @@
+<load target="css/skin.css" />
+<div class="XEModuleInstagramSkinAlbum">
+	<ul class="XEModuleInstagramSkinAlbumList">
+<!--@foreach($data as $key=>$val)-->
+		<li class="XEModuleInstagramSkinAlbumListItem">
+			<div class="XEModuleInstagramSkinAlbumListItemContainer">
+				<!--@if($val[type]=="image")-->
+				<img src="{$val[images][standard_resolution][url]}" />
+				<!--@else-->
+				<video onclick="this.play();" controls><source src="{$val[videos][standard_resolution][url]}" type="video/mp4"></video>
+				<!--@end-->
+			</div>
+		</li>
+<!--@end-->
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+<load target="css/skin.css" />
+<div class="XEModuleInstagramSkinPolariod">
+	<ul class="XEModuleInstagramSkinPolariodList">
+	<!--@foreach($data as $key=>$val)-->
+		<li class="XEModuleInstagramSkinPolariodListItem">
+			<div class="XEModuleInstagramSkinPolariodListItemContainer">
+				<div class="XEModuleInstagramSkinPolariodListItemImage">
+					<!--@if($val[type]=="image")-->
+					<img src="{$val[images][standard_resolution][url]}" />
+					<!--@else-->
+					<video id='listItem{$key}' onclick="this.play();" controls><source src="{$val[videos][standard_resolution][url]}" type="video/mp4"></video>
+					<!--@end-->
+				</div>
+				<div class='XEModuleInstagramSkinPolariodListItemInfo'>
+					<span class='XEModuleInstagramSkinPolariodListItemInfoDate'>{strtoupper(date("dMY His", $val[created_time]))}</span>
+					<span class='XEModuleInstagramSkinPolariodListItemInfoUser'><img src="{$val[user][profile_picture]}" /> {$val[user][username]}</span>
+				</div>
+			</div>
+		</li>
+	<!--@end-->
+	</ul>
+</div>

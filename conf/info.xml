@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">인스타그램</title>
+	<title xml:lang="en">Instagram</title>
+	<description xml:lang="ko">인스타그램에 있는 특정 사용자의 목록을 가져와서 보여줍니다.</description>
+	<description xml:lang="en">Get photos or videos from a user in instagram.com.</description>
+	<version>0.1.0.</version>
+	<date>2015-07-09</date>
+	<category>utility</category>
+	<author email_address="mson0129@gmail.com" link="http://www.studio2b.kr/">
+		<name xml:lang="ko">Studio2b</name>
+		<name xml:lang="en">Studio2b</name>
+	</author>
+	<license>New BSD License</license>
+</module>

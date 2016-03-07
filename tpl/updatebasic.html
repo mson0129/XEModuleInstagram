@@ -1,0 +1,85 @@
+<script>
+var category_counter = {is_array($module_info->username) ? count($module_info->username) : 1};
+function addCategory() {
+	var groupOfCategory = document.getElementById('groupOfCategory');
+	
+	var div = document.createElement("div");
+	div.className = "x_controls";
+	
+	var username = document.createElement("input");
+	username.type = "text";
+	username.name = "username[]";
+	username.placeholder = "{$lang->instagram_username}";
+	
+	var eraser = document.createElement("a");
+	eraser.href = "javascript:document.getElementById('category"+category_counter+"').parentNode.remove();";
+	eraser.id = "category"+category_counter++;
+	eraser.innerHTML = "<i class='xi-close-circle'></i>";
+	
+	div.appendChild(username);
+	div.appendChild(eraser);
+	groupOfCategory.appendChild(div);
+	
+	return true;
+}
+</script>
+<style type='text/css'>
+	@import url('//cdn.jsdelivr.net/xeicon/1.0.4/xeicon.min.css');
+	form#fo_obj .x_icon-question-sign {width: 14px;}
+</style>
+<form class='x_form-horizontal' action='./' method='post' enctype='multipart/form-data'>
+	<input type="hidden" name="act" value="procInstagramAdminUpdateBasic" />
+	<input type="hidden" name="mid" value="{$module_info->mid}" />
+	<input type="hidden" name="module_srl" value="{$module_info->module_srl}" />
+	<input type="hidden" name="admin_member" value="<!--@foreach($admin_member as $key => $val)--><!--@if($member_config->identifier == 'email_address')-->{$val->email_address},<!--@else-->{$val->user_id},<!--@end--><!--@end-->" />
+	<section class='section'>
+		<h1><i class='xi-instagram'></i> {$lang->instagram_essentials}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label" for="client_id"><i class='xi-key'></i> {$lang->instagram_client_id}</label>
+			<div class="x_controls">
+				<input type="text" name="client_id" id="client_id" value="{$module_info->client_id}" />
+				<a href="#client_id_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+				<p id="client_id_help" class="x_help-block" hidden>{$lang->instagram_about_client_id}</p>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<label class="x_control-label" for="username"><i class='xi-db-pull'></i> {$lang->instagram_username}</label>
+			<div id="groupOfCategory">
+				<div class="x_controls" loop="$module_info->username=>$key,$val">
+					<input type="text" name="username[]" id="username" value="{$module_info->username[$key]}" />
+					<!--@if($key>0)-->
+					<a href="javascript:document.getElementById('category{$key}').parentNode.remove();" id="category{$key}"><i class='xi-close-circle'></i></a>
+					<!--@else-->
+					<a href="#username_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+					<!--@end-->
+				</div>
+			</div>
+			<div class='x_controls'>
+				<a alt='addUsername' href='javascript:addCategory();'><i class='xi-plus-circle'></i></a>
+				<p id="username_help" class="x_help-block" hidden>{$lang->instagram_about_username}</p>
+			</div>
+		</div>
+	</section>
+	<section class='section'>
+		<h1><i class='xi-eye'></i> {$lang->instagram_view}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label" for="list_count"><i class='xi-list-ul'></i> {$lang->list_count}</label>
+			<div class="x_controls">
+				<input type="text" name="list_count" id="list_count" value="{$module_info->list_count?$module_info->list_count:20}" />
+				<a href="#list_count_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+				<p id="list_count_help" class="x_help-block" hidden>{$lang->instagram_about_list_count}</p>
+			</div>
+		</div>
+	</section>
+	<section class='section'>
+		<h1><i class='xi-sandwatch-mid'></i> {$lang->instagram_performance}</h1>
+	</section>
+	<div class="x_clearfix">
+		<span class="x_pull-left">
+		
+		</span>
+		<span class="x_pull-right">
+			<a class="x_btn modalAnchor _manage_selected" href="{getNotEncodedUrl('', 'module', 'admin', 'act', 'dispInstagramAdminUpdate', 'module_srl', $module_info->module_srl)}"><i class='xi-cog'></i> {$lang->instagram_advanced_setting}</a>
+		</span>
+	</div>
+</form>

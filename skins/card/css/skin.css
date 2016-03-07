@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+a {color: #125688; text-decoration: none;}
+.XEModuleInstagramSkinCardUsername {color: #125688; font-weight: bold;}
+
+li.XEModuleInstagramSkinCardListItem {height: 640px; margin-top: 7em; background-color: #EEE;}
+li.XEModuleInstagramSkinCardListItem:first-child {margin: 0;}
+div.XEModuleInstagramSkinCardListItemImage {float: left;}
+div.XEModuleInstagramSkinCardListItemImage > img {width: 640px;}
+div.XEModuleInstagramSkinCardListItemInfo {height: 640px; right: 0; overflow: auto;}
+	div.XEModuleInstagramSkinCardListItemInfoContainer {padding: 1em;}
+		p.XEModuleInstagramSkinCardListItemInfoUser {font-size: 1.5em; border-bottom: 1px solid #AAA; padding-bottom: 0.5em; margin-bottom: 0.5em;}
+		p.XEModuleInstagramSkinCardListItemInfoUser > a > img {width: 2em; border-radius: 2em; vertical-align: middle;}
+		p.XEModuleInstagramSkinCardListItemInfoCaption {text-align: justify;}
+		p.XEModuleInstagramSkinCardListItemInfoComment {margin-top: 0.5em;}

@@ -1,0 +1,22 @@
+<div class='XEModuleInstagramSkinDefault'>
+	<!--LIST-->
+	<table>
+		<thead>
+			<tr>
+				<th>미리보기</th>
+				<th>글쓴이</th>
+				<th>날짜</th>
+			</tr>
+		</thead>
+		<tbody>
+<!--@foreach($data as $key=>$val)-->
+			<tr>
+				<td><img src="{$val[images][standard_resolution][url]}" /></td>
+				<td>{$val[user][full_name]}<img src="{$val[user][profile_picture]}" /></td>
+				<td>{date("Y.m.d. h:i:s", $val[caption][created_time])}</td>
+			</tr>
+<!--@end-->
+		</tbody>
+	</table>
+	<!--/LIST-->
+</div>
